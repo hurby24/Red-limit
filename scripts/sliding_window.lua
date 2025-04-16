@@ -1,6 +1,6 @@
 -- Sliding window rate limiting implementation
--- args:
--- returns:
+-- args: maxRequests, timeWindow, now, incrementBy
+-- returns: currentTokens or -1 if rate limit exceeded
 
 local function sliding_window(keys, args)
     local key           = keys[1]           -- Unique identifier for the rate limiter (e.g. user ID or IP)
